@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Helion · Energy Operations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/tokens.css?v=grid-fix" />
+<style>
+  /* Layout shell */
+  .app {
+    display: grid;
+    grid-template-columns: 200px 1fr 260px;
+    grid-template-rows: 52px 1fr 26px;
+    height: 100vh;
+    width: 100vw;
+    background: var(--bg-0);
+  }
+  .app.tweaks-off { grid-template-columns: 200px 1fr 0px; }
+  @media (max-width: 1280px) {
+    .app { grid-template-columns: 188px 1fr 240px; }
+    .app.tweaks-off { grid-template-columns: 188px 1fr 0px; }
+  }
+  .app.tweaks-off .tweaks-col { display: none; }
+
+  .topbar { grid-column: 1 / -1; }
+  .statusbar { grid-column: 1 / -1; }
+
+  .main-col {
+    overflow: auto;
+    padding: 16px;
+    background:
+      linear-gradient(var(--bg-0), var(--bg-0)),
+      repeating-linear-gradient(0deg, transparent 0 23px, oklch(0.18 0.008 240 / 0.3) 23px 24px);
+    background-blend-mode: normal;
+  }
+</style>
+</head>
+<body data-density="comfortable" data-scenario="midday" data-stage="2" data-forecast-style="band">
+
+<div id="root"></div>
+
+<!-- React + Babel (pinned versions; SRI removed — hashes in the original zip did not match the real unpkg artifacts) -->
+<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+
+<!-- App scripts -->
+<script type="text/babel" src="src/data.jsx"></script>
+<script type="text/babel" src="src/primitives.jsx"></script>
+<script type="text/babel" src="src/charts.jsx"></script>
+<script type="text/babel" src="src/flow.jsx"></script>
+<script type="text/babel" src="src/chrome.jsx"></script>
+<script type="text/babel" src="src/screen_overview.jsx"></script>
+<script type="text/babel" src="src/screen_forecast.jsx"></script>
+<script type="text/babel" src="src/screen_assets.jsx"></script>
+<script type="text/babel" src="src/screen_tariffs.jsx"></script>
+<script type="text/babel" src="src/screen_alerts.jsx"></script>
+<script type="text/babel" src="src/tweaks.jsx"></script>
+<script type="text/babel" src="src/app.jsx"></script>
+
+</body>
+</html>
