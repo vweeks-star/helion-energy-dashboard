@@ -141,6 +141,8 @@ function Statusbar({ stage, scenario }) {
       <span>LOAD-SHED STAGE {stage}</span>
       <span>●</span>
       <span className="c-ok">● ALL SYSTEMS NOMINAL</span>
+      <span>●</span>
+      <span>© 2026 STAR LLC</span>
     </div>
   );
 }
