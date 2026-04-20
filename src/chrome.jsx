@@ -11,17 +11,14 @@ function Sidebar({ active, onNav, scenario, snap, soc }) {
   return (
     <div style={{ background: "var(--bg-1)", borderRight: "1px solid var(--line)", display: "flex", flexDirection: "column", height: "100%" }}>
       {/* Brand block */}
-      <div style={{ padding: "16px 18px 14px", borderBottom: "1px solid var(--line)" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 24, height: 24, border: "1.5px solid var(--solar)", position: "relative" }}>
-            <div style={{ position: "absolute", inset: 3, background: "var(--solar)", opacity: 0.3 }} />
-            <div style={{ position: "absolute", left: 3, right: 3, top: "50%", height: 1, background: "var(--solar)" }} />
-            <div style={{ position: "absolute", top: 3, bottom: 3, left: "50%", width: 1, background: "var(--solar)" }} />
-          </div>
-          <div>
-            <div style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.04em", color: "var(--fg-0)" }}>HELION</div>
-            <div className="mono" style={{ fontSize: 9.5, color: "var(--fg-3)", letterSpacing: "0.1em", marginTop: 1 }}>OPS · v2.4.0</div>
-          </div>
+      <div style={{ padding: "14px 14px 12px", borderBottom: "1px solid var(--line)" }}>
+        <img
+          src="helion_logo_option_darkmode.png"
+          alt="Helion — Energy Monitoring & Forecasting, by STAR LLC"
+          style={{ display: "block", width: "100%", height: "auto", maxWidth: 172 }}
+        />
+        <div className="mono" style={{ fontSize: 9.5, color: "var(--fg-3)", letterSpacing: "0.1em", marginTop: 6 }}>
+          OPS · v2.4.0
         </div>
       </div>
 
